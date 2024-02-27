@@ -1,3 +1,6 @@
+//propTypes is a mechanism that ensures that the passed value is of the correct datatype
+import PropTypes from 'prop-types'
+
 function Student(props){
 
     return(
@@ -8,6 +11,14 @@ function Student(props){
         </div>
     );
     
+};
+
+
+Student.propTypes = {
+    name: PropTypes.string,
+    age: PropTypes.number,
+    isStudent: PropTypes.boolean,
+
 }
 
 export default Student
