@@ -1,6 +1,7 @@
 //propTypes is a mechanism that ensures that the passed value is of the correct datatype
-import PropTypes from 'prop-types'
+//defaultProps is a default values for the props incase they are not passed from parent components
 
+import PropTypes from 'prop-types'
 function Student(props){
 
     return(
@@ -19,6 +20,12 @@ Student.propTypes = {
     age: PropTypes.number,
     isStudent: PropTypes.boolean,
 
+}
+
+Student.defaultProps = {
+    name: "Guest",
+    age: 0,
+    isStudent: false
 }
 
 export default Student
