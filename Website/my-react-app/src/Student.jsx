@@ -1,3 +1,5 @@
+//props are read only components that are shared between components
+// A parent component can send value to a child component eg. <Component key=value />
 //propTypes is a mechanism that ensures that the passed value is of the correct datatype
 //defaultProps is a default values for the props incase they are not passed from parent components
 
