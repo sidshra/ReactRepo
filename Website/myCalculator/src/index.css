@@ -1,0 +1,147 @@
+div {
+  text-align: center;
+}
+
+main {
+  border: 4px solid black;
+  width: 20%;
+  height: 70%;
+  margin: auto;
+  margin-top: 200px;
+
+}
+
+#display {
+  width: 100%;
+  height: 75px;
+  font-family: Calibri,sans-serif;
+  text-align: right;
+  vertical-align: middle;
+  background-color: black;
+  color: white;
+  margin: 0
+}
+
+ #secdiv {
+  align-self: self-start;
+
+}
+
+#clear {
+  color: white;
+  background-color: red;
+  height: 75px;
+  width: 50%
+}
+
+#divide {
+  color: white;
+  background-color: rgb(136, 131, 131);
+  height: 75px;
+  width: 25%
+}
+
+#multiply {
+  color: white;
+  background-color: rgb(136, 131, 131);
+  height: 75px;
+  width: 25%
+}
+
+#seven {
+  color: white;
+  background-color: black;
+  height: 75px;
+  width: 25%
+}
+
+#eight {
+  color: white;
+  background-color: black;
+  height: 75px;
+  width: 25%
+}
+
+#nine {
+  color: white;
+  background-color: black;
+  height: 75px;
+  width: 25%
+}
+
+#minus {
+  color: white;
+  background-color: rgb(136, 131, 131);
+  height: 75px;
+  width: 25%
+}
+
+#four {
+  color: white;
+  background-color: black;
+  height: 75px;
+  width: 25%
+}
+
+#five {
+  color: white;
+  background-color: black;
+  height: 75px;
+  width: 25%
+}
+
+#six {
+  color: white;
+  background-color: black;
+  height: 75px;
+  width: 25%
+}
+
+#plus {
+  color: white;
+  background-color: rgb(136, 131, 131);
+  height: 75px;
+  width: 25%
+}
+
+#one {
+  color: white;
+  background-color: black;
+  height: 75px;
+  width: 25%
+}
+
+#two {
+  color: white;
+  background-color: black;
+  height: 75px;
+  width: 25%
+}
+
+#three {
+  color: white;
+  background-color: black;
+  height: 75px;
+  width: 25%
+}
+
+#equals {
+  color: white;
+  background-color: rgb(53, 159, 191);
+  height: 150px;
+  width: 25%
+}
+
+#zero {
+  color: white;
+  background-color: black;
+  height: 75px;
+  width: 50%
+}
+
+#decimal {
+  color: white;
+  background-color: black;
+  height: 75px;
+  width: 25%
+}
