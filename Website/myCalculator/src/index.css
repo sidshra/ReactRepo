@@ -1,13 +1,11 @@
-div {
-  text-align: center;
-}
+
 
 main {
   border: 4px solid black;
-  width: 20%;
+  width: 300px;
   height: 70%;
   margin: auto;
-  margin-top: 200px;
+  margin-top: 150px;
 
 }
 
@@ -22,8 +20,9 @@ main {
   margin: 0
 }
 
- #secdiv {
-  align-self: self-start;
+.secdiv {
+  display: flex;
+  flex-direction: row;
 
 }
 
@@ -31,7 +30,7 @@ main {
   color: white;
   background-color: red;
   height: 75px;
-  width: 50%
+  width: 150px;
 }
 
 #divide {
@@ -108,40 +107,46 @@ main {
   color: white;
   background-color: black;
   height: 75px;
-  width: 25%
+  width: 75px;
 }
 
 #two {
   color: white;
   background-color: black;
   height: 75px;
-  width: 25%
+  width: 75px;
 }
 
 #three {
   color: white;
   background-color: black;
   height: 75px;
-  width: 25%
+  width: 75px;
 }
 
 #equals {
   color: white;
   background-color: rgb(53, 159, 191);
   height: 150px;
-  width: 25%
+  width: 75px;
 }
 
 #zero {
   color: white;
   background-color: black;
   height: 75px;
-  width: 50%
+  width: 150px;
 }
 
 #decimal {
   color: white;
   background-color: black;
   height: 75px;
-  width: 25%
+  width: 75px
 }
+
+footer{
+  text-align: center;
+  font-family: Calibri, sans-serif;
+}
+
