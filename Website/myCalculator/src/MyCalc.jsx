@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 
 function myCalc(){
-   
+    let decVal = false;
+    let eqCall = false
     const [expn, setExpn] = useState(0);
     const [optor,setOptor] = useState('');
     const [fval,setFval] = useState(0)
@@ -12,6 +13,13 @@ function myCalc(){
 
     const handleButtonClick = (value) => {
         //setResult(result + value)
+        if(eqCall === true){
+            setResult('')
+            eqCall = false;
+        }
+        if(value === '.'){
+            decVal = true;
+        }
         setLent(result.length);
         if(result === 0){
             
@@ -19,34 +27,41 @@ function myCalc(){
         } else{
             setResult(result + value) 
         }
+        if(optor !== ''){
+            setExpn(expn + result.toString())
+        }
     }
 
     const handleOperClick = (value) => {
         setFval(result)
-        setExpn(value)
+        setExpn(result.toString() + value)
+        setOptor(value)
         setResult('')
+        decVal=false
     }
 
     const handleResult = () => {
-        if(expn === "+"){
+        if(optor === "+"){
         setResult(Number(fval) + Number(result));
-        } else if(expn === "-") {
+        } else if(optor === "-") {
             setResult(fval - result);
-        } else if(expn === "/"){
+        } else if(optor === "/"){
             setResult(fval / result);
-        } else if(expn === "*"){
+        } else if(opton === "*"){
             setResult(fval * result)
         }
-        setExpn('')
+        setOptor('')
+        eqCall = true
     };
 
     const reset = () => {
         setResult(0);
+        setExpn('')
     };
 
     return(
     <div>    <main>
-            <div id="display"><h4>{lent}</h4><h1 >{result}</h1></div>
+            <div id="display"><h4>{expn}{eqCall}</h4><h1 >{result}</h1></div>
             <span><button id="clear" onClick={reset}>AC</button><button id="divide" onClick={() => handleOperClick('/')} >/</button><button id="multiply" onClick={() => handleOperClick('x')}>x</button></span>
         
             <span><button id="seven" value="7" onClick={() => handleButtonClick('7')}>7</button><button id="eight" onClick={() => handleButtonClick('8')}>8</button><button id="nine" onClick={() => handleButtonClick('9')}>9</button><button id="minus" onClick={() => handleOperClick('-')}>-</button></span>
