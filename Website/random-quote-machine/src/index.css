@@ -1,16 +1,17 @@
-.wrapper{
-  height: 100%;
-  width: 100%;
+
+#Wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
-div {
-  position: relative;
-  z-index: 2;
-}
-.quote-box{
+
+
+#quote-box{
   background-color: white;
   width: 30%;
   margin: auto;
-  margin-top: 200px;
+ 
   padding:20px;
   text-align: right;
 }

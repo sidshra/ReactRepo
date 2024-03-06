@@ -29,13 +29,17 @@ function Quotes(){
     }
     
     return(
-    <div className="Wrapper" style={newBgColor} >
-
-    <div className="quote-box" >
+        
+    <div id="Wrapper" style={newBgColor} >
+        
+    <div id="quote-box" >
             <h4>{answer.quotes}</h4>
             <p>- {answer.author} </p>
+                <span> <a href="https://twitter.com/?lang=en-nz"><img alt="Twitter" src=".\twitter.png"></img></a>
+                    <a href="https://www.tumblr.com/login"><img alt="tumblr" src=".\tumblr.png"></img></a>
+                
                 <button className="new-quote" style={newBgColor} onClick={refreshPage} >New quote</button>
-                </div></div>
+                    </span></div></div>
     
     );
 }

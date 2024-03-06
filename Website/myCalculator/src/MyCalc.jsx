@@ -19,8 +19,15 @@ function myCalc(){
         if(eqcall === 'true'){
             setResult(value)
             setEqcall('false');
-            setExpn('')
+            setExpn(value)
         } else {
+            if(value === '.'){
+                if(deci == 'false'){
+                    setResult(result + value)
+                    setExpn(expn + value)
+                    setDeci('true')
+                }
+            } else {
         
    
         if(result === 0){
@@ -31,9 +38,10 @@ function myCalc(){
             setResult(result + value) 
         
         }
+                setExpn(expn + value)
     }
-        setExpn(expn + value)
         
+    }
     }
 
     const handleOperClick = (value) => {
@@ -80,7 +88,7 @@ function myCalc(){
 
     const reset = () => {
         setResult(0);
-        //setDisresult(0)
+        setDeci('false')
         setFval(0);
         setExpn('');
         setEqcall('false');
