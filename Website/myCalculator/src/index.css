@@ -11,10 +11,10 @@ main {
 
 #display {
   width: 280;
-  height: 75px;
+  height: 45px;
   font-family: Calibri,sans-serif;
   text-align: right;
-  
+  line-height: 5px;
   
   background-color: black;
   color: white;

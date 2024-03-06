@@ -1,67 +1,94 @@
 import React, { useState } from 'react';
 
 function myCalc(){
-    let decVal = false;
-    let eqCall = false
-    const [expn, setExpn] = useState(0);
+    
+    const [deci,setDeci] = useState('false')
+    const [eqcall, setEqcall] = useState('false');
+    
+    const [expn, setExpn] = useState('');
     const [optor,setOptor] = useState('');
     const [fval,setFval] = useState(0)
     
     const [result, setResult] = useState(0);
+    const [disresult, setDisresult] = useState(0);
     const [lent, setLent] = useState(0);
 
 
     const handleButtonClick = (value) => {
-        //setResult(result + value)
-        if(eqCall === true){
-            setResult('')
-            eqCall = false;
-        }
-        if(value === '.'){
-            decVal = true;
-        }
-        setLent(result.length);
+        
+        if(eqcall === 'true'){
+            setResult(value)
+            setEqcall('false');
+            setExpn('')
+        } else {
+        
+   
         if(result === 0){
             
-        setResult(value)
+         setResult(value)
         } else{
+            
             setResult(result + value) 
+        
         }
-        if(optor !== ''){
-            setExpn(expn + result.toString())
-        }
+    }
+        setExpn(expn + value)
+        
     }
 
     const handleOperClick = (value) => {
-        setFval(result)
-        setExpn(result.toString() + value)
         setOptor(value)
+        if(fval === 0){
+        setFval(result)
+        } else{
+            if (optor === "+") {
+                setFval(Number(fval) + Number(result));
+            } else if (optor === "-") {
+                setFval(Number(fval) - Number(result));
+            } else if (optor === "/") {
+                setFval(Number(fval) / Number(result));
+            } else if (optor === "x") {
+                setFval(Number(fval) * Number(result));
+            }
+            setExpn(expn + value + result) 
+        }
+
+        setExpn(expn + value)
+        
         setResult('')
-        decVal=false
+        setDeci('false')
     }
 
     const handleResult = () => {
+        let displayResult;
         if(optor === "+"){
-        setResult(Number(fval) + Number(result));
+            displayResult = Number(fval) + Number(result);
         } else if(optor === "-") {
-            setResult(fval - result);
+            displayResult = Number(fval) - Number(result);
         } else if(optor === "/"){
-            setResult(fval / result);
-        } else if(opton === "*"){
-            setResult(fval * result)
+            displayResult = Number(fval) / Number(result);
+        } else if(optor === "x"){
+            displayResult = Number(fval) * Number(result);
         }
-        setOptor('')
-        eqCall = true
+        setResult(displayResult);
+        setExpn(expn + '=' + displayResult)
+        setOptor('');
+        setEqcall('true');
+        setFval(0)
+                
     };
 
     const reset = () => {
         setResult(0);
-        setExpn('')
+        //setDisresult(0)
+        setFval(0);
+        setExpn('');
+        setEqcall('false');
     };
 
     return(
     <div>    <main>
-            <div id="display"><h4>{expn}{eqCall}</h4><h1 >{result}</h1></div>
+            <div id="display"><h4>{expn}</h4><h1 >{result}</h1></div>
             <span><button id="clear" onClick={reset}>AC</button><button id="divide" onClick={() => handleOperClick('/')} >/</button><button id="multiply" onClick={() => handleOperClick('x')}>x</button></span>
         
             <span><button id="seven" value="7" onClick={() => handleButtonClick('7')}>7</button><button id="eight" onClick={() => handleButtonClick('8')}>8</button><button id="nine" onClick={() => handleButtonClick('9')}>9</button><button id="minus" onClick={() => handleOperClick('-')}>-</button></span>
